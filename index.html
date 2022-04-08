@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="receipe.css">
+    
+    <style>
+    
+    </style>
+</head>
+<body>
+    <div id="navbar"> </div>
+    <div id="searchresult"></div>
+    <div id="latest">Latest Receipe</div>
+    <div id="latestdatashow"></div>
+    <div id="datashow"></div>
+</body>
+</html>
+<script type="module" src="index.js"></script>
+<script type="module">
+    var inputchange=document.querySelector("#dishname")
+inputchange.addEventListener("input",function(){
+  debounce(movie,300)
+})
+async function main() {
+ try {
+      var name = document.querySelector("#dishname").value;
+      document.querySelector("#latestdatashow").innerHTML=""
+
+      var res = await fetch(
+        `https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`
+      );
+
+      var data = await res.json();
+      var data1=data.meals
+      return data1
+    } catch (err) {
+      console.log(err);
+    }
+  }
+  async function movie() {
+    var data = await main();
+    if (data === undefined) {
+      return;
+    }
+    appenddata(data);
+    // console.log(data.strMeal)
+  }
+ 
+
+  let searchdiv = document.querySelector("#searchresult");
+
+  function appenddata(data) {
+    searchdiv.style.display="block"
+    searchdiv.innerHTML = null;
+    data.map(function (data) {
+    
+      let p = document.createElement("p");
+      p.setAttribute("id","localtag")
+      p.textContent = data.strMeal;
+      p.addEventListener("click",function(event){
+           searchresultshowdata(data)
+      })
+     
+
+      searchdiv.append(p);
+    });
+  }
+
+  let timerId;
+  function debounce(fuc, delay) {
+    if (timerId) {
+      clearTimeout(timerId);
+    }
+    timerId = setTimeout(function () {
+      fuc();
+    }, delay);
+  }
+
+  import { getData, appendData } from "./script/showingdata.js";
+  async function searchresultshowdata(data){
+  console.log(data)
+  let res=data
+  document.querySelector("#latestdatashow").style.display="none";
+  searchdiv.style.display = "none";
+  let parent = document.querySelector("#datashow");
+  appendData(data, parent);
+}
+</script>
+

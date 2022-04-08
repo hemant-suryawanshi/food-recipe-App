@@ -1,0 +1,32 @@
+
+#box{
+    display: flex;
+    overflow: scroll;
+}
+#box>div{
+    width: 50%;
+    border: 5px solid rgb(212, 203, 203);
+    padding: 20px;
+    margin: 25px;
+    height: 440px;
+    align-items: center;
+    overflow: scroll;
+}
+#imgdiv>img{
+    width: 100%;
+}
+#head{
+    font-size: larger;
+    font-weight: 450;
+    color: #c87d8a;
+}
+#booody{
+    text-align: justify
+}
+#latest{
+    text-align: center;
+    font-size: 60px;
+    color: #c87d8a;
+    font-weight: 550;
+    margin-top: 20px;
+}
