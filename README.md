@@ -1,7 +1,6 @@
 # Food Recipe APP🌐
 
-**Food Recipe APP** is a platform, I am are displyin the recipee of product that user wants
-In this project we have tried to make a look alike clone of **Food Recipe APP**. With our efforts and the technology stack, that we have learned so far in the masai school, we were able to clone the front end with high precision and quality.
+**Food Recipe APP** is a platform, that shows the recipe of a product to the user's needs, In this project, I have tried to make a look-alike clone of the Food Recipe APP.
 
 # Technology Stack Used 💻
 
