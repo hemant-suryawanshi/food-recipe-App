@@ -59,6 +59,12 @@ You can also take a glimpse of our Project, just follow the below steps:
 
 <br>
 
+## Demo
+
+[Food Recipe App](https://heartfelt-centaur-27da12.netlify.app/)
+
+<br>
+
 ##  Contributor 😇
 
 👤 **Hemant Suryawanshi**
